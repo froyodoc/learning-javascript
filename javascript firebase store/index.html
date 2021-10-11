@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
 
     <title>Document</title>
 </head>
@@ -23,17 +25,17 @@
     <div class="container">
         <form id="add-todo-form">
             <input type="text" name="title" placeholder="Add Task">
-            <a class="waves-effect waves-light btn">Add Task</a>
+            <button type="submit" class="waves-effect waves-light btn">Add Task</button>
         </form>
 
-        <ul class="collection ">
+        <ul class="collection" id="todo-list">
 
-            <li class="collection-item">
+            <!-- <li class="collection-item">
                 <div><span>Buying food</span>
                     <i class="material-icons secondary-content">delete</i>
                     <a href="#modal1" class="modal-trigger secondary-content"> <i class="material-icons ">edit</i></a>
                 </div>
-            </li>
+            </li> -->
 
         </ul>
 
@@ -41,11 +43,10 @@
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
             <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
+                <input type="text" name="newTitle" placeholder="Update Task">
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="#!" id="update" class="modal-close waves-effect waves-green btn-flat">Agree</a>
             </div>
         </div>
     </div>
@@ -55,6 +56,12 @@
             var instances = M.Modal.init(elems);
         });
     </script>
+    <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+        
+      </script>
+      <script src="app.js"></script>
 </body>
 
 </html>
